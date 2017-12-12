@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+
+                <h1>Contact</h1>
+
+                {#
+                formulaire
+                    form_start : <form>
+                    form_end : </form>
+                    form_label : <label>
+                    form_widget : champ
+                    nécessaire de créer le bouton submit
+                    variable form : provient du contrôleur
+                    nom des camps provient de la classe de formulaire Form/...Type
+
+                    attr: attribut HTML
+                #}
+
+                {{ form_errors(form.firstname) }}
+                {{ form_errors(form.lastname) }}
+                {{ form_errors(form.email) }}
+                {{ form_errors(form.message) }}
+                {{ form_errors(form.hobbies) }}
+
+                {{ form_start(form, {'attr' : { 'novalidate' : 'novalidate' }  }) }}
+                <p>     {{ form_label(form.firstname, 'Prénom :') }}
+                    {{ form_widget(form.firstname) }}</br></p>
+                <p>     {{ form_label(form.lastname, 'Nom :') }}
+                    {{ form_widget(form.lastname) }}</br></p>
+                <p>     {{ form_label(form.email, 'E-mail :') }}
+                    {{ form_widget(form.email) }}</br></p>
+                <p>     {{ form_label(form.message, 'Message:') }}
+                    {{ form_widget(form.message) }}</br></p>
+                <p>     {{ form_label(form.hobbies, 'Hobbies') }}
+                    {{ form_widget(form.hobbies) }}</br></p>
+                <p>     {{ form_label(form.operatingSystem, 'OperatingSystem') }}
+                    {{ form_widget(form.operatingSystem) }}</br></p>
+                <p><input type="submit" class="btn btn-primary"></p>
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

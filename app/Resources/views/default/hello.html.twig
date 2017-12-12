@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+    <h1>Bonjour  {{name}}</h1>
+    <h1>{{ 'la valeur:' ~key }}</h1>
+    
+
+    {% for key, value in list %}
+
+        <p>{{ key ~ ' : ' ~ value }}</p>
+
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{# extends: etendre un modele parent (fichier situé #}
+{% extends 'parent.html.twig' %}
+
+{# bloc main defini dans parent.html.twig #}
+{% block main %}
+    <h1>Titre</h1>
+{% endblock %}
+
+{% block style %}
+    <style>
+        h1{ color : orangered; }
+    </style>
+{%  endblock %}

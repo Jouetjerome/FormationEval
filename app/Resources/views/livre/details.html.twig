@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-home"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1>{{ results.name }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                {% for livre in results.categories %}
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="http://dummyimage.com/400x400/000/fff.jpg&text=book1" alt="cover" class="img-fluid" />
+                            <div class="caption">
+                                <h3>{{ livre.titre }}</h3>
+                                <p>{{ livre.auteur }}</p>
+                                <p><a href="/bookstore/book/{{ livre.id }}"  class="btn btn-primary">Details</a></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
